@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     default: "ilkergzlkkr - Portfolio",
     template: "%s | Portfolio",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Portfolio of İlker Güzelkokar",
   openGraph: {
     title: "ilkergzlkkr - Portfolio",
-    description: "Co-founder of unkey.dev and founder of planetfall.io",
+    description: "Portfolio of İlker Güzelkokar",
     url: "https://ilkergzlkkr.vercel.app",
     siteName: "Portfolio",
     images: [
