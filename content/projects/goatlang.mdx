@@ -1,0 +1,130 @@
+---
+title: "GoatLang"
+description: A programming language for the bests.
+date: "2023-03-14"
+published: true
+stars: 17
+---
+
+GoatLang is a programming language for the bests. It is a simple language that is easy to learn and use.
+> This is a work in progress, the language is not ready yet.
+
+### Syntax
+
+```lua
+include "goat/operations.goat"
+include "goat/conditions.goat"
+include "goat/blueprint.goat"
+include "goat/parser.goat"
+include "goat/scope.goat"
+include "goat/loop.goat"
+
+decl Rabbit(name: str, children_count: int = 0)
+
+    func greet(self) print("Hello, my name is: " + name) end
+    func is_parent(self) self.children_count > 0 end
+end
+
+let dad Rabbit("Steven", 3) end
+let child1 Rabbit("Mark") end
+
+func get_rabbit_name()
+    dad.name
+end
+
+print("Dad's name is: " get_rabbit_name())
+
+if dad.is_parent()
+    print("Dad is a parent with " + dad.children_count + " children")
+else
+    print("Dad has no children")
+end
+```
+
+### Features
+
+It is a [`both dynamically and staticly typed`](https://stackoverflow.com/a/1517670) language like python, which means that you don't have to specify the type of a variable when you declare it.
+
+```lua
+let name = "Steven" end
+let age = 20 end
+let is_goat = true end
+```
+
+It can also be used as a scripting language, here is the simple **calculator** example:
+
+```lua
+let a = 20 end
+let b = 10 end
+
+print(a + b) -- 30 
+print(a - b) -- 10
+print(a * b) -- 200
+print(a / b) -- 2
+```
+
+It can also be used as an **object oriented** language, here is the simple **class** example:
+
+```lua
+decl Human(name: str)
+
+    func greet(self) print("Hello, my name is: " + name) end
+end
+```
+
+It can also be used as a **functional** language, here is the simple **function** example:
+
+```lua
+func add(a: int, b: int)
+    a + b
+end
+
+add(10, 20)
+```
+
+It has portals, which are protocols that can be used to communicate with other languages (***only python for now***). Here is the simple **portal** example:
+
+```lua
+include "random" with "python"
+
+random.randint(0, 10)
+```
+
+Most of languages have **conditions**, and GoatLang is not an exception. Here is the simple **condition** example:
+
+```lua
+let condition = true end
+
+if condition
+    print("Condition is true")
+else
+    print("Condition is false")
+end
+```
+
+> In GoatLang, conditions are expressions, which means that you can assign them to a variable.
+
+```lua
+let message if 10 > 20
+    "10 is greater than 20"
+else if 10 < 20
+    "10 is less than 20"
+else
+    "10 is equal to 20"
+end
+
+print(message)
+```
+
+
+### For Developers
+
+GoatLang is interpreted by the python ***for now***, so you need to have python installed on your machine to run it. You can run the language by typing the following command in the terminal:
+
+```bash
+python goat.py $file_name
+```
+
+#### Roadmap
+
+We are planning to remove [`python`](https://www.python.org) dependency and make the language compiled instead of interpreted. We are planned to use [`LLVM`](https://llvm.org) as the compiler backend. We are also planning to add a package manager for the language.

@@ -1,0 +1,59 @@
+---
+title: "GearStick"
+description: GearStick is an open-source cryptographer with password-managing capabilities that is currently under development for Windows, Linux, and macOS platforms.
+date: "2022-12-10"
+url: "https://coilcrypt.com"
+published: true
+repository: BarkinBalci/GearStick
+stars: 3
+---
+
+GearStick is an open-source cryptographer with password-managing capabilities.
+
+> GearStick is moving to [`Coilcrypt`](https://github.com/BarkinBalci/coilcrypt) with a new repository.
+
+{/* <GearStick /> */}
+
+### Overview
+![GearStick](/gearstick/1.png)
+- **Vault**: A vault is a <u>portable file</u> that contains your passwords. You can create a new vault or open an existing one.
+- **Cryptography**: GearStick uses `AES-256-GCM` to encrypt your content.
+- **Password generator**: Generate random password.
+- **Checksum**: To check the integrity of your files, GearStick can generate checksums for you.
+
+### Vault
+
+Vault, as the name suggests, is a <u>portable file</u> that contains your passwords. You can create a new vault or open an existing one. Stored in files that you can move around and store anywhere.
+
+#### How does it work?
+
+When you create a new vault, GearStick generates a random key, salt pair and encrypts it with your password. This key is used to encrypt your passwords. When you open a vault, GearStick decrypts the key with your password and uses it to decrypt your passwords.
+
+We use [`Zero-Trust`](https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/) policy to protect your passwords. This means that your passwords are never stored in the disk. They are only stored in the vault file. If you forget your password, there is no way to recover your passwords since they are not stored anywhere else.
+
+
+### Cryptography
+
+`My Content 👽` + `Secret Key 🔑` = `Encrypted Content 🔐`
+
+`Encrypted Content 🔐` + `Secret Key 🔑` = `My Content 👽`
+
+![GearStick](/gearstick/3.png)
+
+GearStick uses `AES-256-GCM` to encrypt your content. You can encrypt and decrypt your content with a password.
+
+We refer **content** as the data that you want to encrypt or decrypt. It can be a **file or a text**.
+
+### Password Generator
+
+Creating and managing passwords is a difficult task. GearStick can generate random passwords and save them for you. You can specify the length of the password and the characters that you want to use.
+
+![GearStick](/gearstick/2.png)
+
+### Checksum
+
+To check the integrity of your files, GearStick can generate checksums for you. You can use `SHA-256` or `MD5` algorithms to generate checksums.
+![GearStick](/gearstick/4.png)
+
+Compare the checksums to check the integrity of your files.
+
