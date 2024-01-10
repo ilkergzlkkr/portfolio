@@ -3,13 +3,6 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 function clsx(...args: any) {
   return args.filter(Boolean).join(" ");
@@ -180,40 +173,6 @@ const components: MDXComponents = {
     />
   ),
   Image,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-  GearStick({ className, ...props }) {
-    return (
-      <Carousel>
-        <CarouselContent>
-          <CarouselItem>
-            <Image
-              src="/gearstick/1.png"
-              alt="Gear stick"
-              width={1024}
-              height={1024}
-              {...props}
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <Image
-              src="/gearstick/2.png"
-              alt="Gear stick"
-              width={1024}
-              height={1024}
-              {...props}
-            />
-          </CarouselItem>
-          <CarouselItem>...</CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious variant={"default"} />
-        <CarouselNext variant={"default"} />
-      </Carousel>
-    );
-  },
 };
 
 interface MdxProps {
