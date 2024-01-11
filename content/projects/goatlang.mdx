@@ -1,9 +1,8 @@
 ---
 title: "GoatLang"
 description: A programming language for the bests.
-date: "2023-03-14"
+date: "2023-12-21"
 published: true
-stars: 17
 ---
 
 GoatLang is a programming language for the bests. It is a simple language that is easy to learn and use.
@@ -116,6 +115,60 @@ end
 print(message)
 ```
 
+<details>
+  <summary>Loops</summary>
+  
+  `4` **(For) Keyword** indicates the start of a loop:
+
+  ```lua
+  4 let i 1 end, i < 4, let i i + 1 end
+    print(i > 4)
+  end
+  -- false
+  -- false
+  -- false
+  ```
+</details>
+
+<details>
+  <summary>Scopes</summary>
+  
+  ### GoatLang can differentiate between scopes:
+
+  ```lua
+  func print_two()
+    let one 1 end
+    print(one + 1)
+  end
+  
+  let one 9999 end
+  print(one) -- 9999
+  print_two() -- 2
+  
+  -- testing global and local scope
+  print(one) -- 9999
+  ```
+</details>
+
+<details>
+  <summary>Blueprints</summary>
+  
+  ### GoatLang classes are called blueprints:
+
+  ```lua
+  decl Proxy(val: str | Proxy) do
+          let self.val val end
+      end
+  end
+  
+  let p Proxy("5") end
+  let pp Proxy(p) end
+  let ppp Proxy(pp) end
+  
+  print(ppp.val.val) -- 5
+  ```
+</details>
+
 
 ### For Developers
 
@@ -124,6 +177,31 @@ GoatLang is interpreted by the python ***for now***, so you need to have python 
 ```bash
 python goat.py $file_name
 ```
+
+<details>
+  <summary>Parser Implementation Details</summary>
+  
+  ### Our parser can parse the following code:
+
+  ```lua
+  -- results of 8
+ print(add(3, 5))
+ print(add(sub(8, 5), 5))
+ print(add(sub(8, 5), div(25, 5)))
+ print(add(sub(8, 5), mul(div(25, 5), 1)))
+ 
+print(div(
+-- comment
+    mul(add(3, 5,)
+                  , -2 + -5,), 25 * 100
+                    --     ^ trailing comma
+            -- ^ trailing comma
+      ,
+ --  ^ trailing comma
+))
+
+  ```
+</details>
 
 #### Roadmap
 

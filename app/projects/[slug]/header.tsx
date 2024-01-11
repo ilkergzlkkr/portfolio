@@ -64,9 +64,11 @@ export const Header: React.FC<Props> = ({ project, views }) => {
               } `}
             >
               <Star className="w-5 h-5" />{" "}
-              {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                views
-              )}
+              {views !== undefined
+                ? Intl.NumberFormat("en-US", { notation: "compact" }).format(
+                    views
+                  )
+                : "∞"}
             </span>
             <Link target="_blank" href="https://github.com/ilkergzlkkr">
               <Github
