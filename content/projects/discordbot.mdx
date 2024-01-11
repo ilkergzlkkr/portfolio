@@ -2,12 +2,67 @@
 title: "DiscordBot"
 description: A chatbot that primarily focuses on music and moderation. Highly customizable and easy to use.
 date: "2022-12-10"
-published: false
+published: true
 stars: 19
 ---
 
-# Buraya ne yazılır
+## Long Story About My Learning Journey - Blog
 
-neyse 
+I created a chatbot to have fun with my friends on Discord. It was a basic calculator that had few commands: `/add` `/subtract` `/multiply` `/divide`
 
-![GearStick](/gearstick/1.png)
+I wanted to add more features to it, so I started learning about the Discord API and how to use it. I learned about the `discord.py` library and started working on it. 4 commands were not enough, so I added reactions (auto messages for special keywords). I added a few reactions like `lol` `xd` `bruh` and so on.
+
+At the time there was musicbots that were popular, so I decided to add music features to my bot. I used the `youtube-dl` + `ffmpeg` combo to download the audio from YouTube videos to my server and then play it. It was a very basic music bot, but it was enough for me and my friends.
+
+I wanted to grow more users, for example i shared my bot to a few Discord servers which were my friends' servers. But i learned something very important thing: `Race Conditions`. I didn't know what it was at the time, but i learned it the hard way. I had a command called `/play` which played music from YouTube. I had a few users in my server and i was playing music for them. But when i shared my bot to other servers, i had more users. When i played music for them, it stopped playing music for the users in my server. I didn't know what was happening, so i started debugging. I found out that the music was playing for the users in my server, but it was not playing for the users in other servers. <u>When the song ended, it tries to delete the downloaded audio file from the server</u>. I had to delete artifacts from the server in order to operate. 
+
+Found a solution to my custom music player. I used the `lavalink` API to play music. Connecting and playing music was very easy, but i had to learn how to use the API in order to customize my experience. Made my own Queue system and added a few commands like `/skip` `/skipto` `/forward` `/volume` `/seek` `/equalizer`. Added a fancy UI to the music player and it was ready to go.
+
+![UI]()
+
+In a week it was my birthday, i wanted to give myself a gift. I wanted to make my bot reach 200 users, so i shared my bot to a few websites that lists Discord bots. I reached 200 users in a day! I was very happy, in a week i reached 500 users. Insane! 🎊🎉🥳
+
+### Today
+
+As of today, my bot operates on **300000** users which includes some of Discord employees 😎
+
+My main and only goal is to make user experience better.
+
+## Features
+
+### Media Controls
+
+Todo: 
+- Integration with MediaKeys (Play/Pause, Stop, Next, Previous)
+
+![MediaControls]()
+
+### Autocomplete
+
+![AutoComplete]()
+
+
+### Moderation
+
+![AutoRole]()
+
+### Miscellaneous
+
+- TFT
+- Currency
+- Reminder (opensource)
+
+
+## For developers
+
+![Diagram/Architecture]()
+
+- Supports YouTube, SoundCloud, Spotify, Twitch, Vimeo, Bandcamp, Mixer, HTTP, Local Files, HTTP Live Streaming, Dash, HLS playlists, and M3U8 files.
+
+- Sharding / Hosting
+
+- File - Code structure / Command Count
+
+- Logging
+
+Thanks to my friends for all the support and help.  

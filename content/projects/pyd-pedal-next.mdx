@@ -9,14 +9,23 @@ stars: 1
 ---
 
 
-## About
-
-TBD!
+We needed something to slow down the music and add reverb to it. Just like trends on TikTok/YouTube. So, we created this app to do that.
 
 ![Pedal](/equalizer/equalizer-start.png)
 
+You import audio/video files or paste a link to a YouTube video. Then, you can slow down the music as much as you want and add reverb to it. 
 
-## How to use
-TBD!
+### How to use
+
+1. Import audio file or paste a link to a YouTube video.
+2. Slow down the music as much as you want.
+3. Add reverb to it.
+4. Download the music. Done!
 
 ![Pedal](/equalizer/equalizer-dashboard.png)
+
+## For Developers
+
+At first i made this app with python server that uses `ffmpeg` + `youtube-dl` + `spotify/pedalboard` with concurrent audio downloading and processing. But it was too slow and i couldn't find a way to make it faster. So i decided to make it `client sided` app
+
+Now, it uses `Tone.js`, no server behind. Check out the [source code](https://github.com/ilkergzlkkr/pyd-pedal-next) for more info.
