@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import Image from "next/image";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -22,6 +23,13 @@ export default function Home() {
             </Link>
           ))}
         </ul>
+        <Image
+          className="p-4"
+          width={230}
+          height={230}
+          src={"/me.png"}
+          alt="ilker güzelkokar"
+        />
       </nav>
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <Particles
@@ -35,7 +43,9 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
-          I'm building software to have fun.
+          I'm building software to have fun. Currently student at Nişantaşı
+          University. I'm interested in full-stack development, app integration
+          and automation.
         </h2>
       </div>
     </div>
