@@ -3,10 +3,6 @@ import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import { Button } from "../components/ui/button";
-import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
 
 declare global {
   interface Document {
@@ -36,26 +32,6 @@ const socials = [
 ];
 
 export default function Example() {
-  if (typeof window !== "undefined") return null;
-
-  function sendMessage() {
-    fetch("/api/send-message", {
-      method: "POST",
-      body: JSON.stringify({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-      }),
-
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => {
-      // successfully sent message via contact form
-      console.log(res);
-    });
-  }
-
   return (
     <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
@@ -88,25 +64,6 @@ export default function Example() {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center text-zinc-200">
-        <form>
-          <div className="p-4 grid w-full max-w-sm items-center gap-4">
-            <Label htmlFor="name">Name</Label>
-            <Input type="name" id="name" placeholder="Name" />
-          </div>
-          <div className="p-4 grid w-full max-w-sm items-center gap-4">
-            <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" placeholder="Email" />
-          </div>
-          <Textarea placeholder="Message"></Textarea>
-          <div className="p-4">
-            <Button type="submit" onClick={() => sendMessage()}>
-              Submit
-            </Button>
-          </div>
-        </form>
-      </div>
-      <div className="h-64" />
     </div>
   );
 }
